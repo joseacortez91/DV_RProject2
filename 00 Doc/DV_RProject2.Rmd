@@ -1,63 +1,12 @@
 ---
 output: html_document
 ---
-Elements Of Data Visualization: Project 1
+Elements Of Data Visualization: Project 2, Exoplanet Analysis
 ===
 __By Alex Cortez, Adam Hernandex, and Alex Pearce__
 
-__GitHub__: https://github.com/alexpearce92/DV_RProject1.git
+__GitHub__: https://github.com/joseacortez91/DV_RProject2
 
-In this project, the group familiarizes itself with git, knitr, ggplot, and basic SQL commands to create **interesting** plots of given data. Additionally, we create graphs usings the entire data set via a provided SQL query. 
+This project deals with creating interesting graphs of exoplanet data from (Where ever this data is from), using packages like tidyr and dplyr, as well as ggplots2.
 
-## We will first create our data frames.
-
-####We load the necessary libraries ...
-```{r message=F, warning=F}
-library('RCurl')
-library('ggplot2')
-```
-
-####Then we query the database and generate our data frames
-```{r}
-source("../01 Data/create_data_frames.R",echo=TRUE)
-```
-
-
-##Now we create "interesting" graphs:
-
-####Here we can see that most customers hail from California. How delightfully intriguing. 
-
-```{r}
-source("../02 Visualizations/interestingplot1.R",echo=TRUE)
-```
-
-####And here, It appears some artist price their worth more than others but, no higher than 17 and no less than 13 price units. Quite a fascinating aspect of the data. 
-
-```{r}
-source("../02 Visualizations/interestingplot2.R",echo=TRUE)
-```
-
-####Here we see that some item ID's have more individual orders (not accounting for quantity of order), than others. Item ID 1 seems to be the hottest commodity! 
-
-```{r}
-source("../02 Visualizations/interestingplot3.R",echo=TRUE)
-```
-
-####Finally we take a look at the number of orders per month. This was done by some initial data subsetting, followed by a ggplot function. It appears this company does poorly during September and October. Unfortunate. 
-
-```{r}
-source("../02 Visualizations/interestingplot4.R",echo=TRUE)
-```
-
-
-##Now to recreate some other interesting graphs using several joins in the creation of our dataframe:
-
-####We first query the database with our SQL statement
-```{r}
-source("../01 Data/create_joined_data_frames.R",echo=TRUE)
-```
-
-####Now let's build some graphs
-```{r message=F, warning=F}
-source("../02 Visualizations/recreate_plots.R",echo=TRUE)
-```
+## Database Creations
