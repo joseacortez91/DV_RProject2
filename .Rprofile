@@ -1,0 +1,7 @@
+library("RCurl")
+library("ggplot2")
+library("dplyr")
+library("plyr")
+library("reshape2")
+library("knitr")
+library("tidyr")

@@ -66,8 +66,66 @@ img {
 <p><strong>By Alex Cortez, Adam Hernandex, and Alex Pearce</strong></p>
 <p><strong>GitHub</strong>: <a href="https://github.com/joseacortez91/DV_RProject2">https://github.com/joseacortez91/DV_RProject2</a></p>
 <p>This project deals with creating interesting graphs of exoplanet data from (Where ever this data is from), using packages like tidyr and dplyr, as well as ggplots2.</p>
+<div id="load-necessary-packages" class="section level2">
+<h2>Load necessary packages</h2>
+<pre class="r"><code>source(&quot;../01 Data/load_packages.R&quot;,echo=TRUE)</code></pre>
+<pre><code>## 
+## &gt; library(dplyr)
+## 
+## &gt; library(tidyr)
+## 
+## &gt; library(ggplot2)
+## 
+## &gt; library(RCurl)</code></pre>
+</div>
 <div id="database-creations" class="section level2">
 <h2>Database Creations</h2>
+<pre class="r"><code>source(&quot;../01 Data/create-df.R&quot;,echo=TRUE)</code></pre>
+<pre><code>## 
+## &gt; df &lt;- data.frame(eval(parse(text = substring(getURL(URLencode(&quot;http://129.152.144.84:5001/rest/native/?query=\&quot;select * from exoplanets\&quot;&quot;), 
+## +      .... [TRUNCATED] 
+## 
+## &gt; radial.df &lt;- subset(df, RADIUS != &quot;null&quot;)
+## 
+## &gt; tbl_df(radial.df)
+## Source: local data frame [1,063 x 5]
+## 
+##            NAME                MASS             RADIUS       ORB_PERIOD
+## 1   Kepler-43 b    3.23143005371094   1.20000004768372 3.02409505844116
+## 2  Kepler-310 b 0.00538981007412076  0.106164999306202 13.9306983947754
+## 3  Kepler-222 c  0.0710944011807442  0.413953006267548  10.088809967041
+## 4      KELT-6 b    0.43121999502182     1.192999958992 7.84569978713989
+## 5     WASP-13 b   0.473883002996445   1.40699994564056 4.35301351547241
+## 6   Kepler-84 c   0.096000000834465  0.215000003576279 12.8830003738403
+## 7   Kepler-58 d  0.0258466005325317  0.262288987636566 40.1013717651367
+## 8    HAT-P-18 b   0.197205007076263  0.995000004768372 5.50802278518677
+## 9  Kepler-357 b  0.0135482996702194   0.16415399312973 6.47543382644653
+## 10 Kepler-406 c 0.00857506040483713 0.0758318975567818 4.62332010269165
+## ..          ...                 ...                ...              ...
+## Variables not shown: ECCENTRICITY (fctr)</code></pre>
+</div>
+<div id="data-wrangling" class="section level2">
+<h2>Data Wrangling</h2>
+<div id="isolate-mass-and-radius" class="section level3">
+<h3>Isolate Mass and Radius</h3>
+<pre class="r"><code>source(&quot;../02 Data Wrangling/mass_radius.R&quot;,echo=TRUE)</code></pre>
+<pre><code>## 
+## &gt; radial.df %&gt;% select(MASS, RADIUS) %&gt;% tbl_df
+## Source: local data frame [1,063 x 2]
+## 
+##                   MASS             RADIUS
+## 1     3.23143005371094   1.20000004768372
+## 2  0.00538981007412076  0.106164999306202
+## 3   0.0710944011807442  0.413953006267548
+## 4     0.43121999502182     1.192999958992
+## 5    0.473883002996445   1.40699994564056
+## 6    0.096000000834465  0.215000003576279
+## 7   0.0258466005325317  0.262288987636566
+## 8    0.197205007076263  0.995000004768372
+## 9   0.0135482996702194   0.16415399312973
+## 10 0.00857506040483713 0.0758318975567818
+## ..                 ...                ...</code></pre>
+</div>
 </div>
 </div>
 
