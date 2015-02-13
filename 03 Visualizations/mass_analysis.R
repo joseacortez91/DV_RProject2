@@ -1,1 +1,0 @@
-ggplot(data = customers.df) + geom_histogram(aes(x = CUSTOMER_STATE))

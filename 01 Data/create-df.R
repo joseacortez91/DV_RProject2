@@ -3,7 +3,6 @@ df <- data.frame(eval(parse(text=substring(getURL(URLencode('http://129.152.144.
 #Subsetting data to incluce only those exoplanets with a radius
 radial.df <- filter(df, RADIUS != 'null' & MASS != 'null' & ORB_PERIOD != 'null') %>%
   arrange(desc(ECCENTRICITY))
-tbl_df(radial.df)
 
 # Convert numeric strings to numerics (floating point exists but is hidden until used)
 radial.df[radial.df=="null"] <- NA 

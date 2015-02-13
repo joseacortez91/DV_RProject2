@@ -1,8 +1,8 @@
 #Loads packages
-library("RCurl")
 library("ggplot2")
-library("dplyr")
+library("gplots")
+library("grid")
 library("plyr")
+library("RCurl")
 library("reshape2")
-library("knitr")
-library("tidyr")
+library("dplyr")
