@@ -41,8 +41,9 @@ circular orbit, values between 0 and 1 form an elliptical orbit, 1 is a paraboli
 sections, as every Kepler orbit is a conic section. It is normally used for the isolated tw
 -body problem, but extensions exist for objects following a rosette orbit through the galaxy.
 
-How incredibly interesting. This analysis deals with looking at individual solar systems and their average mass, eccentricity, and orbital period. By using data-wrangling, subsetting the data for this desired visualization was done with ease. We first take a look at solar systems with more than one planet, and then those we more than one in order to "zoom-in" to the data. 
+How incredibly interesting. This analysis deals with looking at exoplanets of individual solar systems along with their average mass, eccentricity, and orbital period. By using data-wrangling, subsetting the data for this desired visualization was done with ease. We first "zoom-in" to the data by looking at solar systems with more than one planet then "zoom-out" by including all solar-systems. 
 
+###Data Wrangling
 ```{r message=FALSE}
 source("../02 Data Wrangling/eccentricity.R",echo=TRUE)
 ```
@@ -57,8 +58,11 @@ Finally, for ease of representing the mean cummulative distribution of planet ma
 
 This Is done yet again for the second graph, yet the filter(Planets >1) workflow portion is ommited. 
 
-###The Wrangled Data Provides the following plots:
+###Visualizations
 ```{r message=FALSE, fig.width=12, fig.height=7.5}
 source("../03 Visualizations/eccen_analysis_1.R", echo=TRUE)
 source("../03 Visualizations/eccen_analysis_2.R", echo=TRUE)
 ```
+
+There appears to be a pattern in the Mean Orbital Period in regards to Mean Eccentricity, but it's difficult to discern much else without proper statisical analysis and applicable physics knowledge. 
+
