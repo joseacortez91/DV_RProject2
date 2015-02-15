@@ -2,3 +2,4 @@ eccen.df <- filter(df, RADIUS != 'null' & MASS != 'null' & ORB_PERIOD != 'null' 
 
 eccen2.df <- filter(df, RADIUS != 'null' & MASS != 'null' & ORB_PERIOD != 'null' & ECCENTRICITY != 'null') %>% mutate(SUN = sub(".$","",NAME, perl = TRUE)) %>% select(SUN, ECCENTRICITY, ORB_PERIOD, MASS) %>% group_by(SUN) %>% summarise(Mean_Eccentricty = mean(ECCENTRICITY), Mean_Orb_Period = mean(ORB_PERIOD), Mean_mass = mean(MASS), Planets = n()) %>% mutate(Mass_Cume_Dist = cume_dist(Mean_mass)) %>% mutate(Mass=ntile(Mass_Cume_Dist,4))
 
+tbl_df(eccen.df)
