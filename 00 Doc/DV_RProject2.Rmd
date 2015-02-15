@@ -3,6 +3,9 @@ output: html_document
 ---
 Elements Of Data Visualization: Project 2, Exoplanet Analysis
 ===
+
+***
+
 __By Alex Cortez, Adam Hernandex, and Alex Pearce__
 
 __GitHub__: https://github.com/joseacortez91/DV_RProject2
@@ -18,6 +21,9 @@ source("../01 Data/load_packages.R",echo=TRUE)
 ```{r message=FALSE}
 source("../01 Data/create-df.R",echo=TRUE)
 ```
+
+***
+
 # Average Mass and Radius Analysis
 
 ## Data Wrangling
@@ -31,6 +37,8 @@ source("../02 Data Wrangling/mass_radius.R",echo=TRUE)
 ```{r message=FALSE, fig.width=12, fig.height=7.5}
 source("../03 Visualizations/mass_radius_analysis.R", echo=TRUE)
 ```
+
+***
 
 # Orbital Eccentricity Analysis
 Via Wikipedia:
@@ -63,5 +71,6 @@ source("../03 Visualizations/eccen_analysis_1.R", echo=TRUE)
 source("../03 Visualizations/eccen_analysis_2.R", echo=TRUE)
 ```
 
-There appears to be a pattern in the Mean Orbital Period in regards to Mean Eccentricity, but it's difficult to discern much else without proper statisical analysis and applicable physics knowledge. 
+Comparing the two graphs, it can be seen that variation in Mean Eccentricty vs. Mean Orbital Period is much greater when considering single-planet stars. Perhaps the number of planets in a solar system have an effect on how closely planets will form a more cirular orbit? Moreover, there appears to be a pattern in graph of all stars, but it's difficult to discern much else without proper statisical analysis and applicable physics knowledge!
 
+***
