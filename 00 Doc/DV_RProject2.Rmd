@@ -26,18 +26,19 @@ source("../01 Data/create-df.R",echo=TRUE)
 
 # Average Mass and Radius Analysis
 
+We will begin by ordering the exoplanets by mass and dividing them into ten groups, which we will call percentiles. Each mass percentile will then be summarized to generate the average mass and radius of the percentile. Plotting these results will compare how average mass and radius change for each percentile, thus showing if there is a radical difference in mass/radius between the discovered exoplanets.
+
 ## Data Wrangling
 
-### Isolate mass and radius, grouping the data set into ten percentiles by mass, and generate summary results
 ```{r message=FALSE}
 source("../02 Data Wrangling/mass_radius.R",echo=TRUE)
 ```
 
-### Plot the curve to show increase in mass and radius at each percentile
+## Visualization
 ```{r message=FALSE, fig.width=12, fig.height=7.5}
 source("../03 Visualizations/mass_radius_analysis.R", echo=TRUE)
 ```
-We can see above that as we move forward up the mass percentile classes, the average radius and mass of the contained planets rapidly increase. This pattern most likely indicates that the majority of exoplanets in the data have relatively low mass and radius. A few large and massive planets help drive up the average in the upper groups of planets.
+We can see above that as we move forward up the mass percentile classes, the average radius and mass of the contained planets rapidly increase. This pattern most likely indicates that the majority of exoplanets in the data have relatively equal mass and radius. A few large and massive planets, however, help drive up the average in the upper groups of planets.
 
 ***
 
