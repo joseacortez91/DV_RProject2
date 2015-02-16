@@ -6,7 +6,7 @@ Elements Of Data Visualization: Project 2, Exoplanet Analysis
 
 ***
 
-__By Alex Cortez, Adam Hernandex, and Alex Pearce__
+__By Jose Cortez, Adam Hernandex, and Alex Pearce__
 
 __GitHub__: https://github.com/joseacortez91/DV_RProject2
 
@@ -75,3 +75,9 @@ source("../03 Visualizations/eccen_analysis_2.R", echo=TRUE)
 Comparing the two graphs, it can be seen that variation in Mean Eccentricty vs. Mean Orbital Period is much greater when considering single-planet stars. Perhaps the number of planets in a solar system have an effect on how closely planets will form a more cirular orbit? Moreover, there appears to be a pattern in the graph of all stars, but it's difficult to discern much else without proper statisical analysis and applicable physics knowledge!
 
 ***
+
+# Exoplanet comparison with Earth
+
+## Data Wrangling
+
+### Narrow dataframe results to exoplanets similar to Earth
