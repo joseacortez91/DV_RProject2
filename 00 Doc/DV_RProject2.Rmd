@@ -54,11 +54,11 @@ How incredibly interesting. This portion of project 2 deals with analyzing exopl
 source("../02 Data Wrangling/eccentricity.R",echo=TRUE)
 ```
 
-After all null values are filtered out, the SUN column is created by ommiting the last character of the NAMES column in order to provide duplicate values for planets in the same solar system. 
+After all null values are filtered out, the STAR column is created by ommiting the last character of the NAMES column in order to provide duplicate values for planets in the same solar system. 
 
-This output is piped for selection of the SUN, ECCENTRICITY, ORB_PERIOD, and MASS columns. 
+This output is piped for selection of the STAR, ECCENTRICITY, ORB_PERIOD, and MASS columns. 
 
-Subsequent groupby and summarise functions group the planets into their respective suns, and returns the mean of the variables in question. 
+Subsequent groupby and summarise functions group the planets into their respective stars, and returns the mean of the variables in question. 
 
 Finally, for ease of representing the mean cummulative distribution of planet mass per star, the mass data is piped first with cumme _ dist followed by the ntile function to separate the quantiles of the distribution. 
 
@@ -73,7 +73,7 @@ source("../03 Visualizations/eccen_analysis_1.R", echo=TRUE)
 source("../03 Visualizations/eccen_analysis_2.R", echo=TRUE)
 ```
 
-Comparing the two graphs, it can be seen that variation in Mean Eccentricty vs. Mean Orbital Period is much greater when considering single-planet stars. Perhaps the number of planets in a solar system have an effect on how closely planets will form a more cirular orbit? Moreover, there appears to be a pattern in the graph of all stars, but it's difficult to discern much else without proper statisical analysis and applicable physics knowledge!
+Comparing the two graphs, it can be seen that variation in Mean Eccentricty vs. Mean Orbital Period is much greater when considering single-planet stars. Perhaps the number of planets in a solar system have an effect on how closely planets will form a more cirular orbit? Moreover, there appears to be a positive correlation with eccentricity and orbital period, but it's difficult to discern much else without proper statisical analysis and applicable physics knowledge!
 
 ***
 
