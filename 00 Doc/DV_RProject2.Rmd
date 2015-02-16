@@ -7,7 +7,7 @@ __By Alex Cortez, Adam Hernandex, and Alex Pearce__
 
 __GitHub__: https://github.com/joseacortez91/DV_RProject2
 
-This project deals with creating interesting graphs of exoplanet data from (**source of the data**), using packages like tidyr and dplyr, as well as our standard class packages.
+This project deals with creating interesting graphs of exoplanet data from this [research paper](http://adsabs.harvard.edu/abs/2014PASP..126..827H), using packages like tidyr and dplyr as well as our standard class packages to form data frames and visualizations. In accordance with our usage of the information, we would like to acknowledge that *this research has made use of the Exoplanet Orbit Database and the Exoplanet Data Explorer at exoplanets.org*.
 
 ## Load necessary packages
 ```{r message=FALSE}
@@ -31,6 +31,7 @@ source("../02 Data Wrangling/mass_radius.R",echo=TRUE)
 ```{r message=FALSE, fig.width=12, fig.height=7.5}
 source("../03 Visualizations/mass_radius_analysis.R", echo=TRUE)
 ```
+We can see above that as we move forward up the mass percentile classes, the average radius and mass of the contained planets rapidly increase. This pattern most likely indicates that the majority of exoplanets in the data have relatively low mass and radius. A few large and massive planets help drive up the average in the upper groups of planets.
 
 # Orbital Eccentricity Analysis
 Via Wikipedia:
