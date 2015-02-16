@@ -1,0 +1,83 @@
+---
+output: html_document
+---
+Elements Of Data Visualization: Project 2, Exoplanet Analysis
+===
+
+***
+
+__By Jose Cortez, Adam Hernandex, and Alex Pearce__
+
+__GitHub__: https://github.com/joseacortez91/DV_RProject2
+
+This project deals with creating interesting graphs of exoplanet data from this [research paper](http://adsabs.harvard.edu/abs/2014PASP..126..827H), using packages like tidyr and dplyr as well as our standard class packages to form data frames and visualizations. In accordance with our usage of the information, we would like to acknowledge that *this research has made use of the Exoplanet Orbit Database and the Exoplanet Data Explorer at exoplanets.org*.
+
+## Load necessary packages
+```{r message=FALSE}
+source("../01 Data/load_packages.R",echo=TRUE)
+```
+
+## Database Creations
+```{r message=FALSE}
+source("../01 Data/create-df.R",echo=TRUE)
+```
+
+***
+
+# Average Mass and Radius Analysis
+
+## Data Wrangling
+
+### Isolate mass and radius, grouping the data set into ten percentiles by mass, and generate summary results
+```{r message=FALSE}
+source("../02 Data Wrangling/mass_radius.R",echo=TRUE)
+```
+
+### Plot the curve to show increase in mass and radius at each percentile
+```{r message=FALSE, fig.width=12, fig.height=7.5}
+source("../03 Visualizations/mass_radius_analysis.R", echo=TRUE)
+```
+We can see above that as we move forward up the mass percentile classes, the average radius and mass of the contained planets rapidly increase. This pattern most likely indicates that the majority of exoplanets in the data have relatively low mass and radius. A few large and massive planets help drive up the average in the upper groups of planets.
+
+***
+
+# Orbital Eccentricity Analysis
+Via Wikipedia:
+
+> The orbital eccentricity of an astronomical object is a parameter that determines the amount by which its orbit around another body deviates from a perfect circle. A value of 0 is a circular orbit, values between 0 and 1 form an elliptical orbit, 1 is a parabolic escape orbit, and greater than 1 is a hyperbola. The term derives its name from the parameters of conic sections, as every Kepler orbit is a conic section. It is normally used for the isolated two-body problem, but extensions exist for objects following a rosette orbit through the galaxy.
+
+How incredibly interesting. This portion of project 2 deals with analyzing exoplanets of individual solar systems along with their average mass, eccentricity, and orbital period. By using data-wrangling, subsetting the data for this desired visualization was done with ease. We first "zoom-in" to the data by looking at solar systems with more than one planet then "zoom-out" by including all solar-systems. 
+
+##Data Wrangling
+```{r message=FALSE}
+source("../02 Data Wrangling/eccentricity.R",echo=TRUE)
+```
+
+After all null values are filtered out, the SUN column is created by ommiting the last character of the NAMES column in order to provide duplicate values for planets in the same solar system. 
+
+This output is piped for selection of the SUN, ECCENTRICITY, ORB_PERIOD, and MASS columns. 
+
+Subsequent groupby and summarise functions group the planets into their respective suns, and returns the mean of the variables in question. 
+
+Finally, for ease of representing the mean cummulative distribution of planet mass per star, the mass data is piped first with cumme _ dist followed by the ntile function to separate the quantiles of the distribution. 
+
+This Is done yet again for the second graph, yet the filter(Planets >1) workflow portion is ommited. 
+
+##Visualizations
+```{r message=FALSE, fig.width=12, fig.height=7.5}
+source("../03 Visualizations/eccen_analysis_1.R", echo=TRUE)
+```
+
+```{r message=FALSE, fig.width=12, fig.height=7.5}
+source("../03 Visualizations/eccen_analysis_2.R", echo=TRUE)
+```
+
+Comparing the two graphs, it can be seen that variation in Mean Eccentricty vs. Mean Orbital Period is much greater when considering single-planet stars. Perhaps the number of planets in a solar system have an effect on how closely planets will form a more cirular orbit? Moreover, there appears to be a pattern in the graph of all stars, but it's difficult to discern much else without proper statisical analysis and applicable physics knowledge!
+
+***
+
+# Exoplanet comparison with Earth
+
+## Data Wrangling
+
+### Narrow dataframe results to exoplanets similar to Earth
