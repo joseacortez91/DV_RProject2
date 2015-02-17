@@ -81,4 +81,16 @@ Comparing the two graphs, it can be seen that variation in Mean Eccentricty vs. 
 
 ## Data Wrangling
 
-### Narrow dataframe results to exoplanets similar to Earth
+### Narrow dataframe results to exoplanets within 10% of Earth's mass and radius
+```{r message=FALSE}
+source("../02 Data Wrangling/earth.R",echo=TRUE)
+```
+
+###Plot these Earth-like exoplanets on a graph
+```{r message=FALSE, fig.width=12, fig.height=7.5}
+source("../03 Visualizations/earth_analysis.R", echo=TRUE)
+```
+
+This plot displays all scientifically known exoplanets which have mass and radius to within 10% of Earth's. The units of radius and mass are in terms of Jupiter's radius and mass. The Orbital period is also shown and for each planet this value falls far short of Earth's 365 day cycle. A human would age much quicker on any of these exoplanets!
+
+***
